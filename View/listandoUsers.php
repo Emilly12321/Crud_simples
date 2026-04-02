@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body {
+            background-color:rgb(248, 251, 255);
+            
+        }
+        .fundo{
+            background-color:#FFFF;
+            color: rgb(56, 56, 56);
+        }
+
+    </style>
+    <title>Listando Usuários</title>
+</head>
+<body>
+    <div class="container d-flex flex-column justify-content-center  min-vh-100 align-items-center px-5 ">
+        <h1>Listando Usuários</h1>
+        <div class="w-100 fundo  px-2 py-3 rounded shadow-sm">
+            
+            <table class="table text-center">
+            <thead>
+                <tr>
+                    <th >ID</th>
+                    <th>NOME</th>
+                    <th>EMAIL</th>
+                    <th>IDADE</th>
+                    <th>TELEFONE</th>
+                    <th>CIDADE</th>
+                    <th>CURSO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($resultadoData as $user): ?>
+                    
+                    <tr>
+                        <td> <?php echo $user['id']  ?> </td>
+                        <td><?php echo $user['nome']  ?> </td>
+                        <td><?php echo $user['email']  ?> </td>
+                        <td><?php echo $user['idade']  ?> </td>
+                        <td><?php echo $user['telefone']  ?> </td>
+                        <td><?php echo $user['cidade']  ?> </td>
+                        <td><?php echo $user['curso']  ?> </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            
+            <div class="d-grid mx-auto">
+                <a href="index.php?acao=index" class="btn btn-primary" >Voltar</a>
+            </div>
+            
+        </div>
+        </div>
+            
+        </body>
+        </html>
