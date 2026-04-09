@@ -46,6 +46,40 @@ class userController{
         require_once __DIR__ . '/../View/listandoUsers.php';
     
     }
+    function listarID()
+    {
+        $id = $_GET['id'] ?? "";
+        $resultadoData = $this->modelo->getByID($id);
+        require_once __DIR__ . '/../View/editarUsers.php';
+    
+    }
+
+    function atualizar(){
+
+        $id = $_POST['id'] ?? "";
+        $nome = $_POST['nome'] ?? "";
+        $email = $_POST['email'] ?? "";
+        $telefone = $_POST['telefone'] ?? "";
+        $idade = $_POST['idade'] ?? "";
+        $cidade = $_POST['cidade'] ?? "";
+        $curso = $_POST['curso'] ?? "";
+
+        $resultadoData = $this->modelo->updateUser($id,$nome,$email,$telefone,$idade,$cidade,$curso);
+        header("Location: index.php?acao=listarUsers");
+        exit;
+   
+
+    }
+
+    function excluirUser()
+    {
+        $id = $_GET['id'] ?? "";
+        $resultadoData = $this->modelo->delete($id);
+        header("Location: index.php?acao=listarUsers");
+        exit;    
+    }
+
+
 
 }
 

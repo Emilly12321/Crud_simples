@@ -32,6 +32,7 @@
                     <th>TELEFONE</th>
                     <th>CIDADE</th>
                     <th>CURSO</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,6 +46,10 @@
                         <td><?php echo $user['telefone']  ?> </td>
                         <td><?php echo $user['cidade']  ?> </td>
                         <td><?php echo $user['curso']  ?> </td>
+                        <td>
+                            <a href="./index.php?acao=listarID&id=<?=$user['id']?>">Editar</a> |
+                            <a href="./index.php?acao=excluirUser&&id=<?=$user['id']?>">Excluir</a>
+                        </td>
                     </tr>
                     <?php endforeach; ?>
                 </tbody>

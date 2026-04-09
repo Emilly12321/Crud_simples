@@ -16,9 +16,8 @@ class userModel extends Conexao {
     public function insert($nome,$email,$telefone,$idade,$cidade,$curso){
             
 
-            // mesma coisa se fosse -> $bancoSelecionado = $this->conexao->prepare("INSERT INTO $this->tabela (modelo, marca, ano) VALUES (?, ?, ?)")
             $inserindo = $this->conexao->prepare("INSERT INTO $this->tabela (nome, email, telefone, idade, cidade, curso) VALUES (?, ?, ?,?,?,?)");
-            $inserindo->execute([$nome, $email, $telefone, $idade, $cidade, $curso]);;
+            $inserindo->execute([$nome, $email, $telefone, $idade, $cidade, $curso]);
     
     }
 
@@ -31,6 +30,38 @@ class userModel extends Conexao {
 
         return $resultadoQuery;
     }
+
+    public function getByID($id)
+    {
+
+        $bancoSelecionando = $this->conexao->prepare("SELECT * FROM $this->tabela WHERE id = ?");
+
+        $bancoSelecionando->execute([$id]);
+
+        return $resultadoQuery = $bancoSelecionando->fetchAll(PDO::FETCH_ASSOC);;
+
+    }
+
+    public function updateUser($id,$nome,$email,$telefone,$idade,$cidade,$curso)
+    {
+
+        $bancoSelecionando = $this->conexao->prepare("UPDATE $this->tabela SET  nome = ?, email = ?, telefone = ?, idade = ?, cidade = ?, curso = ? WHERE id = ?");
+
+        $bancoSelecionando->execute([$nome,$email,$telefone,$idade,$cidade,$curso,$id]);
+
+    }
+
+    
+    public function delete($id)
+    {
+
+        $bancoSelecionando = $this->conexao->prepare("Delete  FROM $this->tabela WHERE id = ?");
+
+        $bancoSelecionando->execute([$id]);
+
+    }
+
+
 
 }
 
