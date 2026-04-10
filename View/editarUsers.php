@@ -21,32 +21,9 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg  bg-primary">
-            <div class="container-fluid shadow-sm ">
-                <h1 class="navbar-brand ms-2 pb-0 text-light">S.G.U</h1>
-                <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span> -->
-                </button>
-                <div class=" collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
-                    <ul class=" navbar-nav me-2  mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active text-light" aria-current="page" href="index.php">Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Menu
-                            </a>
-                            <ul class="dropdown-menu  dropdown-menu-end ">
-                                <li><a href='index.php?acao=cadastrar' class="dropdown-item">Cadastrar</a></li>
-                                <li><a href='index.php?acao=listarUsers' class="dropdown-item">Listar<a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
-
+        <?php 
+            include 'src\Components\navbar.php';
+        ?>
 
         <div class='container d-flex justify-content-center shadow-sm min-vh-100 mt-3 px-5 '>
             <div class="w-50 h-25 fundo py-3  rounded border border-grey">
@@ -56,7 +33,7 @@
                 <form action="./index.php?acao=atualizar" method='POST' class='form'>
                     <fieldset class="px-5 d-flex flex-column gap-2 ">
                         <?php foreach ($resultadoData as $user): ?>
-                            <input type="hidden" name="id"  value="<?= $user['id']?>" >
+                        <input type="hidden" name="id"  value="<?= $user['id']?>" >
 
                         <label for="nome">Nome:</label>
                         <input type="text" name="nome" placeholder="Digite seu nome" value="<?= $user['nome']?>" class="form-control" >
@@ -76,11 +53,12 @@
                         <label for="curso">Curso:</label>
                         <input type="text" name="curso" placeholder="Digite seu curso" value="<?= $user['curso']?>" class="form-control" >
                         
+                        <?php endforeach; ?>
+
                         <div class="d-grid ">
                             <button class="btn btn-outline-primary mt-2">Atualizar</button>
                         </div>
-                        <a class="btn btn-outline-danger" href="index.php?acao='index'">Voltar</a>
-                        <?php endforeach; ?>
+                        <a class="btn btn-outline-danger" href="index.php?acao=listarUsers">Voltar</a>
                     </fieldset>
                             
                             
