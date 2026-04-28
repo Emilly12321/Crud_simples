@@ -25,7 +25,7 @@ class notasModel extends Conexao {
     {
         $bancoSelecionando = "SELECT notas.*,user.nome,
                     (notas.nota1 + notas.nota2 + notas.nota3) AS soma_notas,
-                    (notas.nota1 + n.nota2 + notas.nota3)/3 AS media_simples,
+                    (notas.nota1 + notas.nota2 + notas.nota3)/3 AS media_simples,
                     ((notas.nota1 + notas.nota2 + notas.nota3)/3) * notas.peso AS media_ponderada,
 
                     CASE 
@@ -36,48 +36,48 @@ class notasModel extends Conexao {
                 FROM $this->tabela notas
                 INNER JOIN usuarios user ON user.id = notas.aluno_id";
 
-        return $this->conexao->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        return $this->conexao->query($bancoSelecionando)->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getAlunos()
     {
-        $sql = "SELECT id, nome FROM usuarios";
-        return $this->conexao->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+        $bancoSelecionando = "SELECT id, nome FROM usuarios";
+        return $this->conexao->query($bancoSelecionando)->fetchAll(PDO::FETCH_ASSOC);
     }
 
 
     public function getResumo()
     {
-        $sql = "SELECT COUNT(*) AS total_lancamentos,
+        $bancoSelecionando = "SELECT COUNT(*) AS total_lancamentos,
                 MAX((nota1 + nota2 + nota3)/3) AS maior_media,
                 MIN((nota1 + nota2 + nota3)/3) AS menor_media,
                 AVG((nota1 + nota2 + nota3)/3) AS media_geral
                 FROM $this->tabela";
 
-        return $this->conexao->query($sql)->fetch(PDO::FETCH_ASSOC);
+        return $this->conexao->query($bancoSelecionando)->fetch(PDO::FETCH_ASSOC);
     }
 
     public function getByID($id)
     {
-        $sql = $this->conexao->prepare("SELECT * FROM $this->tabela WHERE id = ?");
-        $sql->execute([$id]);
+        $bancoSelecionando = $this->conexao->prepare("SELECT * FROM $this->tabela WHERE id = ?");
+        $bancoSelecionando->execute([$id]);
 
-        return $sql->fetch(PDO::FETCH_ASSOC);
+        return $bancoSelecionando->fetch(PDO::FETCH_ASSOC);
     }
 
     public function update($id, $aluno_id, $bimestre, $nota1, $nota2, $nota3, $peso, $faltas)
     {
-        $sql = $this->conexao->prepare("UPDATE $this->tabela 
+        $bancoSelecionando = $this->conexao->prepare("UPDATE $this->tabela 
                 SET aluno_id=?, bimestre=?, nota1=?, nota2=?, nota3=?, peso=?, faltas=?
                 WHERE id=?");
 
-        $sql->execute([$aluno_id, $bimestre, $nota1, $nota2, $nota3, $peso, $faltas, $id]);
+        $bancoSelecionando->execute([$aluno_id, $bimestre, $nota1, $nota2, $nota3, $peso, $faltas, $id]);
     }
 
     public function delete($id)
     {
-        $sql = $this->conexao->prepare("DELETE FROM $this->tabela WHERE id = ?");
-        $sql->execute([$id]);
+        $bancoSelecionando = $this->conexao->prepare("DELETE FROM $this->tabela WHERE id = ?");
+        $bancoSelecionando->execute([$id]);
 
     }
 }
