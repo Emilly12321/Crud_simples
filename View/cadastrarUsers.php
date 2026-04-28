@@ -33,7 +33,7 @@
                 <h1 class="text-center fs-4">Cadastrando o Usuário</h1>
                 
                 <form action="index.php?acao=inserir" method='POST' class='form  '>
-                    <fieldset class="px-5 d-flex flex-column gap-2 ">
+                    <fieldset class="px-5  gap-2 ">
                         
                         <label for="nome">Nome:</label>
                         <input type="text" name="nome" placeholder="Digite seu nome" class="form-control" >
@@ -53,10 +53,10 @@
                         <label for="curso">Curso:</label>
                         <input type="text" name="curso" placeholder="Digite seu curso" class="form-control" >
                         
-                        <div class="d-grid ">
+                        <div class="d-grid pb-2">
                             <button class="btn btn-outline-primary mt-2">Cadastrar</button>
                         </div>
-                        <a class="btn btn-outline-danger" href="index.php">Voltar</a>
+                        <a class="btn btn-outline-danger w-100" href="index.php">Voltar</a>
                             
                     </fieldset>
                             

@@ -8,7 +8,7 @@
                 <div class=" collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
                     <ul class=" navbar-nav me-2  mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active text-light" aria-current="page" href="index.php">Home</a>
                             </li>
                             <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-light" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -17,6 +17,7 @@
                             <ul class="dropdown-menu  dropdown-menu-end ">
                                 <li><a href='index.php?acao=cadastrar' class="dropdown-item">Cadastrar</a></li>
                                 <li><a href='index.php?acao=listarUsers' class="dropdown-item">Listar<a></li>
+                                <li><a href='index.php?acao=notas' class="dropdown-item">Notas</a></li>
                             </ul>
                         </li>
                     </ul>
