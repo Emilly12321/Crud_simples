@@ -31,15 +31,26 @@
             <label>Bimestre:</label>
             <input type="text" name="bimestre" value="<?= $nota['bimestre'] ?>" class="form-control mb-2">
 
-            <label>Nota 1:</label>
-            <input type="number" step="0.01" name="nota1" value="<?= $nota['nota1'] ?>" class="form-control mb-2">
 
-            <label>Nota 2:</label>
-            <input type="number" step="0.01" name="nota2" value="<?= $nota['nota2'] ?>" class="form-control mb-2">
+             <div class="row mb-2">
 
-            <label>Nota 3:</label>
-            <input type="number" step="0.01" name="nota3" value="<?= $nota['nota3'] ?>" class="form-control mb-2">
+                <div class="col-md-4">
+                    <label>Nota 1:</label>
+                    <input type="number" step="0.01" name="nota1" value="<?= $nota['nota1'] ?>" class="form-control">
+                </div>
 
+                <div class="col-md-4">
+                    <label>Nota 2:</label>
+                    <input type="number" step="0.01" name="nota2" value="<?= $nota['nota2'] ?>" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label>Nota 3:</label>
+                    <input type="number" step="0.01" name="nota3"  value="<?= $nota['nota3'] ?>" class="form-control">
+                </div>
+
+            </div>  
+            
             <label>Peso:</label>
             <input type="number" step="0.01" name="peso" value="<?= $nota['peso'] ?>" class="form-control mb-2">
 
