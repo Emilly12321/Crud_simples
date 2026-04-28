@@ -32,13 +32,15 @@
             <div class="p-5 mb-4">
                 <div class="container-fluid py-5">
                 
-                <h1 class="display-5 fw-bold text-center pb-2">Sistema de Gerenciamento de Usuários</h1>
+                <h1 class="display-4 fw-bold text-center pb-2">Sistema de Gerenciamento de Usuários e Notas</h1>
 
                 <hr>
                 
                 <p class="col-md-8 fs-5 w-auto text-justify">
-                    Bem-vindo ao sistema de gerenciamento de usuários. Esta aplicação foi desenvolvida com o objetivo de oferecer uma forma prática, organizada e eficiente de administrar dados de usuários em um único ambiente. Tudo isso seguindo o padrão CRUD ( <strong>Create</strong>, <strong>Read</strong>, <strong>Update</strong>, <strong>Delete</strong> ), amplamente utilizado no desenvolvimento de sistemas.
-  
+                    Aplicação desenvolvida para gerenciar usuários e acompanhar o desempenho acadêmico dos alunos, seguindo o padrão CRUD (Create, Read, Update, Delete).
+
+                    O sistema permite cadastrar e administrar usuários, registrar notas por bimestre, calcular médias automaticamente e classificar os alunos conforme seu desempenho, além de exibir relatórios gerais da turma.  
+
                 </p>
 
                 
